@@ -1,0 +1,27 @@
+.MyTable {
+	width: 85%;
+	margin: 0 auto;
+	text-align: left;
+	table {
+		border: 1px solid white;
+		width: 100%;
+		border-collapse: collapse;
+		th {
+			background: white;
+			color: var(--background);
+		}
+		tbody tr:nth-child(even) {
+			background: white;
+			color: var(--background);
+		}
+	}
+}
+.OPTION {
+	background: orange;
+}
+.CANCELED {
+	background: red;
+}
+.CONFIRMED {
+	background: lightseagreen;
+}

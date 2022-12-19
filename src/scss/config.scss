@@ -1,0 +1,10 @@
+/* configuration globale des couleurs, polices, etc */
+
+:root {
+	--background: #282C34;
+	--color-primary: #FF0000;
+	--color-secondary: #00FF00;
+	/* etc */
+}
+/* import de la feuille de style de Bootstrap */
+@import "~bootstrap/scss/bootstrap";

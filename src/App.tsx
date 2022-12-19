@@ -1,24 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import MyTable from './components/MyTable';
+// on va chercher l'énum pour éviter les erreurs de frappe etc
+import { StateOrders } from './enums/StateOrders';
 
 function App() {
+  let orders:any = [
+    {id: 1, nbJours: 1, tva: 20, status: StateOrders.OPTION, typePresta: 'Formation', client: 'M2I',tjmHt: 1200, comment: 'Merci' },
+    {id: 2, nbJours: 5, tva: 20, status: StateOrders.CONFIRMED, typePresta: 'Formation', client: 'XYZ',tjmHt: 1200, comment: 'Merci' },
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MyTable orders={ orders } />
     </div>
   );
 }

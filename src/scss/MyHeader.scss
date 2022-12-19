@@ -1,0 +1,18 @@
+/* feuille de style pour l'entête HTML */
+header {
+	background: var(--background);
+	display: flex;
+	/* en css header img */
+	img {
+		max-width: 20%;
+	}
+	 /* css: header h1 */
+	h1 {
+		font-size: 3.5em;
+		color: var(--color-primary);
+	}
+	h2 {
+		font-size: 2em;
+		color: var(--color-primary);
+	}
+}

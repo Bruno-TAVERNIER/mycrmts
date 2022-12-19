@@ -1,15 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import MyHeader from './components/MyHeader';
+import MyFooter from './components/MyFooter';
+import MyNav from './components/MyNav';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+let titre:string = "Mon CRM";
+let punch:string = 'Ma Punchline';
 root.render(
   <React.StrictMode>
+    <MyHeader titre={titre} punch={punch} />
+    <MyNav />
     <App />
+    <MyFooter nom="Moi" />
   </React.StrictMode>
 );
 
