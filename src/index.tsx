@@ -31,7 +31,7 @@ root.render(
         <Route path='/orderadd' element={ <OrderAdd /> } />
         <Route path='/orderedit/:id' element={ <OrderEdit /> } />
         <Route path='/clientslist' element={ <ClientList /> } /> 
-        <Route path='/clientadd' element={ <ClientEdit /> } /> 
+        <Route path='/clientedit' element={ <ClientEdit /> } /> 
         <Route path='/clientedit/:id' element={ <ClientEdit /> } /> 
         <Route path='*' element = { <E404 /> } />
       </Routes>

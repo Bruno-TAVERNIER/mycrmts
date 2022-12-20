@@ -39,7 +39,7 @@ export default function ClientList() {
   else return (
     <div className="App">
       <ClientsTable clients={ clients } modifState = { modifState } delete = { deleteClient } />
-      <Link to='/clientadd' className='btn btn-primary'>Ajouter</Link>
+      <Link to='/clientedit' className='btn btn-primary'>Ajouter</Link>
     </div>
   );
 }

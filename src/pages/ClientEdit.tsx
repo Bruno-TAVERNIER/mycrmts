@@ -36,7 +36,7 @@ export default function ClientEdit() {
 	if(isLoaded) return (
 		<div className="ClientEdit">
 			<h1>Edit a client</h1>
-			<p><FormClient client={ client } /></p>
+			<FormClient client={ client } />
 		</div>
 	)
 	else return <div>Chargement en cours</div>
