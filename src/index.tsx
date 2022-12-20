@@ -14,7 +14,6 @@ import OrderAdd from './pages/OrderAdd';
 import OrderEdit from './pages/OrderEdit';
 import E404 from './pages/E404';
 
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

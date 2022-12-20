@@ -1,11 +1,17 @@
 import { useState } from 'react';
 import { StateOrders } from '../enums/StateOrders';
-import Orders from '../Interfaces/IOrders';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
  
-export default function FormOrder() {
-	let initOrder: Orders = {client: '', tjmHt: 0, tva: 0, typePresta: '', nbJours: 0, comment: '', status: StateOrders.OPTION}; //uniquement pour l'ajout, sinon order en fonction  de son id
-	const [order, setOrder] = useState(initOrder);
+export default function FormOrder(props:any) {
+	// récupération id si modif
+	let action:string;
+	if(isNaN(props.order.id)) action="add";
+	else action = "edit";
+
+	const [order, setOrder] = useState(props.order);
+	// pour la navigation
+	const navigate = useNavigate();
 	function modifOrder(event:any) {
 		setOrder({...order, [event.target.name] : event.target.value});
 		console.log(order);
@@ -23,6 +29,7 @@ export default function FormOrder() {
 		axios.post('http://localhost:3004/orders', order)
 		.then((response) => {
 			console.log(response);
+			navigate('/'); //retour à la liste
 		});
 	}
 	return (

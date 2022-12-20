@@ -3,6 +3,7 @@ import { TrashFill, PencilSquare } from "react-bootstrap-icons";
 import { StateOrders } from "../enums/StateOrders";
 /* le state pour modifier l'affichage du select */
 //import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function MyColumns(props:any) {
 
@@ -22,7 +23,7 @@ export default function MyColumns(props:any) {
 	/* https://github.com/Bruno-TAVERNIER/mycrmts */
 	return (
 		<>
-			<td><PencilSquare /> <TrashFill onClick={ () => { props.delete(props.order.id) }  }/></td>
+			<td><Link to={ 'orderedit/' + props.order.id }><PencilSquare /></Link> <TrashFill onClick={ () => { props.delete(props.order.id) }  }/></td>
 			<td>{ props.order.id }</td>
 			<td>{ props.order.client }</td>
 			<td>{ props.order.typePresta }</td>
