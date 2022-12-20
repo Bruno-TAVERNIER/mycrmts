@@ -18,7 +18,7 @@ export default function MyTable(props:any) {
 				</thead>
 				<tbody>
 					{
-						props.orders.map((order:any) => <tr key={ order.id }><MyColumns order={ order } /></tr>)
+						props.orders.map((order:any) => <tr key={ order.id }><MyColumns order={ order } modifState={ props.modifState } /></tr>)
 					}
 				</tbody>
 			</table>

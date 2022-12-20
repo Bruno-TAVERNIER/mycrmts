@@ -16,12 +16,12 @@
 		}
 	}
 }
-.OPTION {
+.OPTION select, .OPTION{
 	background: orange;
 }
-.CANCELED {
+.CANCELED select, .CANCELED {
 	background: red;
 }
-.CONFIRMED {
+.CONFIRMED select, .CONFIRMED{
 	background: lightseagreen;
 }
