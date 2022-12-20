@@ -29,16 +29,6 @@
       "client": "ATOS",
       "comment": "Merci Atos",
       "id": 3
-    },
-    {
-      "client": "CLT3",
-      "tjmHt": 1200,
-      "tva": 20,
-      "typePresta": "Formation",
-      "nbJours": 5,
-      "comment": "test 123",
-      "status": "CONFIRMED",
-      "id": 23
     }
   ],
   "clients": [
