@@ -13,6 +13,8 @@ import App from './App';
 import OrderAdd from './pages/OrderAdd';
 import OrderEdit from './pages/OrderEdit';
 import E404 from './pages/E404';
+import ClientEdit from './pages/ClientEdit';
+import ClientList from './pages/ClientsList';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -28,6 +30,9 @@ root.render(
         <Route path='/' element={ <App /> } />
         <Route path='/orderadd' element={ <OrderAdd /> } />
         <Route path='/orderedit/:id' element={ <OrderEdit /> } />
+        <Route path='/clientslist' element={ <ClientList /> } /> 
+        <Route path='/clientadd' element={ <ClientEdit /> } /> 
+        <Route path='/clientedit/:id' element={ <ClientEdit /> } /> 
         <Route path='*' element = { <E404 /> } />
       </Routes>
     </BrowserRouter>

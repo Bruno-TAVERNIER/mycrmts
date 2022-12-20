@@ -8,7 +8,7 @@ export default function FormOrder(props:any) {
 	let action:string;
 	if(isNaN(props.order.id)) action="add";
 	else action = "edit";
-
+	// pour les formulaires, il faut toujours au moins un state
 	const [order, setOrder] = useState(props.order);
 	// pour la navigation
 	const navigate = useNavigate();
@@ -25,12 +25,21 @@ export default function FormOrder(props:any) {
 	{
 		event.preventDefault(); //empecher la soumission html et le rechargement de la page
 		console.log(order);
-		//Ajout à jour API
-		axios.post('http://localhost:3004/orders', order)
-		.then((response) => {
-			console.log(response);
-			navigate('/'); //retour à la liste
-		});
+		if(action==='add') {
+			//Ajout API
+			axios.post('http://localhost:3004/orders', order)
+			.then((response) => {
+				console.log(response);
+				navigate('/'); //retour à la liste
+			});
+		}
+		else if(action==='edit') {
+			axios.put('http://localhost:3004/orders/'+ order.id, order)
+			.then(response2 => {
+				console.log(response2);
+				navigate('/');
+			})
+		}
 	}
 	return (
 		<form onSubmit={ submitForm } >

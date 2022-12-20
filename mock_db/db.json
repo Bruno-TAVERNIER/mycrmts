@@ -43,20 +43,20 @@
   ],
   "clients": [
     {
-      "nom": "Christophe",
+      "nom": "Christopher",
       "tva": 20,
       "totalCaHt": 12000,
-      "state": "ACTIVE",
-      "comment": "Wesh ! Commentaire pour client Christophe",
+      "status": "ACTIVE",
+      "comment": "Wesh ! Commentaire pour client Christopher",
       "id": 1
     },
     {
-      "state": "INACTIVE",
+      "nom": "toto",
+      "totalCaHt": 2000,
       "tva": 20,
-      "id": 2,
-      "nom": "Modus",
-      "totalCaHt": 120000,
-      "comment": "Commentaire pour client Modus"
+      "comment": "Un commentaire",
+      "status": "INACTIVE",
+      "id": 2
     }
   ]
 }
