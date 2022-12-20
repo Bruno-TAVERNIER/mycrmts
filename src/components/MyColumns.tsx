@@ -22,7 +22,7 @@ export default function MyColumns(props:any) {
 	/* https://github.com/Bruno-TAVERNIER/mycrmts */
 	return (
 		<>
-			<td><PencilSquare /> <TrashFill /></td>
+			<td><PencilSquare /> <TrashFill onClick={ () => { props.delete(props.order.id) }  }/></td>
 			<td>{ props.order.id }</td>
 			<td>{ props.order.client }</td>
 			<td>{ props.order.typePresta }</td>
@@ -33,7 +33,7 @@ export default function MyColumns(props:any) {
 			<td>{ ttc(totalHt, props.order.tva) }</td>
 			<td>{ props.order.comment }</td>
 			<td className={ props.order.status }>
-				<select value={ props.order.status } onChange={ (event) => props.modifState(event, props.order.id) }>
+				<select value={ props.order.status } onChange={ (event) => props.modifState(event, props.order) }>
 					{
 						Object.values(StateOrders).map((status, index) => <option key={ index } className={ status } >{ status }</option>)
 					}
