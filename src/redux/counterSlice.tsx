@@ -9,8 +9,8 @@ const initialState = {
 /* fonction asynchrone de mise à jour du state */
 export const incrementAsync = createAsyncThunk(
 	'counter/fetchCount',
-	async (amount) => {
-		const response = await fetchCount(amount);
+	async (amount: number) => {
+		const response:any = await fetchCount(amount);
 		return response.data; //action.payload quand 'fulfilled'
 	}
 );
@@ -46,6 +46,6 @@ export const counterSlice = createSlice({
 // export des fonctions du réduceur
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 // export de la value du store
-export const selectCount = (state) => state.counter.value;
+export const selectCount = (state:any) => state.counter.value;
 //export du reducer
 export default counterSlice.reducer;

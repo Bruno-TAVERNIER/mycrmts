@@ -40,7 +40,7 @@ export default function MyFooter(props:any) {
 			<button onClick={ () => dispatch( increment() ) }>Store++</button>
 			<button onClick={ () => dispatch( decrement() ) }>Store--</button>
 			<button onClick={ () => dispatch( incrementByAmount(incrementValue) ) }>Store+5</button>
-			<button onClick={ () => dispatch( incrementAsync() ) }>Store async</button>
+			<button onClick={ () => dispatch( incrementAsync(3)) }>Store +3 async</button>
 		</footer>
 	)
 }
