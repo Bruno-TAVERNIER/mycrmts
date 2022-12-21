@@ -36,12 +36,12 @@
       "nom": "Christophe",
       "tva": 20,
       "totalCaHt": 12000,
-      "state": "ACTIVE",
+      "status": "ACTIVE",
       "comment": "Wesh ! Commentaire pour client Christophe",
       "id": 1
     },
     {
-      "state": "INACTIVE",
+      "status": "INACTIVE",
       "tva": 20,
       "id": 2,
       "nom": "Modus",

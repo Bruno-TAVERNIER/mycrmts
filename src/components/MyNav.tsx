@@ -8,7 +8,7 @@ export default function MyNav() {
 				<li><Link to='/'>Home</Link></li>
 				<li><Link to='orderadd'>New Order</Link></li>
 				<li><Link to='/clientslist'>Clients</Link></li>
-				<li><Link to='/clientadd'>New Client</Link></li>
+				<li><Link to='/clientedit'>New Client</Link></li>
 			</ul>
 		</nav>
 	)

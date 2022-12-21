@@ -4,12 +4,16 @@ import { StateOrders } from "../enums/StateOrders";
 /* le state pour modifier l'affichage du select */
 //import { useState } from 'react';
 import { Link } from 'react-router-dom';
+//récupération du contexte
+import { ThemeContext }  from "../components/ThemeContext";
+import React from 'react';
 
 export default function MyColumns(props:any) {
 
 	/* le state, la fonction pour le changer, et la valeur par défaut */
 	/*const [status, chgStatus] = useState(props.order.status);*/
-
+	// constante issue du contexte
+	const  ctx:any   = React.useContext(ThemeContext);
 	let totalHt:number = props.order.nbJours * props.order.tjmHt;
 
 	function ttc(ht:number, tva:number):number {
@@ -24,7 +28,7 @@ export default function MyColumns(props:any) {
 	return (
 		<>
 			<td><Link to={ 'orderedit/' + props.order.id }><PencilSquare /></Link> <TrashFill onClick={ () => { props.delete(props.order.id) }  }/></td>
-			<td>{ props.order.id }</td>
+			<td>{ props.order.id } {ctx}</td>
 			<td>{ props.order.client }</td>
 			<td>{ props.order.typePresta }</td>
 			<td>{ props.order.nbJours }</td>

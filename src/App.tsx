@@ -1,5 +1,7 @@
 import './App.scss';
 import MyTable from './components/MyTable';
+import { ThemeContext } from './components/ThemeContext';
+
 // on va chercher l'énum pour éviter les erreurs de frappe etc
 //import { StateOrders } from './enums/StateOrders';
 // bibliothèque axios pour les appels d'API 
@@ -10,9 +12,18 @@ import { useState, useEffect } from 'react';
 import Orders from './Interfaces/IOrders';
 /* redirection */
 import { useNavigate } from 'react-router-dom';
- 
+import MonSlot from './components/Slot';
+/* pour redux */
+import { useSelector, useDispatch } from 'react-redux';
+import { selectCount } from './redux/counterSlice';
+
 function App() {
 
+  /* useSelector permet de récupérer la valeur du store */
+  const count = useSelector(selectCount);
+
+  /* on crée un state pour toutes les variables qui doivent provoquer
+    une mise à jour de l'affichage quand elles changent */
   const [orders, setOrders] = useState(null);
   const[isLoading, loader] = useState(true); //pour l'affichage une fois chargé
 
@@ -67,10 +78,20 @@ function App() {
   else if(isLoading) return <div>Chargement en cours</div>
   else return (
     <div className="App">
-      <MyTable orders={ orders } modifState = { modifState } delete = { deleteOrder } />
-      <button className="btn btn-primary" onClick={ ajouter }>Ajouter</button>
+      <ThemeContext.Provider value="dark">
+         <MyTable orders={ orders } modifState = { modifState } delete = { deleteOrder } />
+         <button className="btn btn-primary" onClick={ ajouter }>Ajouter</button>
+      </ThemeContext.Provider >
+      <MonSlot>
+        <span>Je teste un Slot</span>
+        <h3>Toujours dans mon Slot</h3>
+        <h4>{ count }</h4>
+      </MonSlot>
     </div>
   );
 }
 
 export default App;
+/*
+https://github.com/public-apis/public-apis
+https://geo.api.gouv.Fr*/

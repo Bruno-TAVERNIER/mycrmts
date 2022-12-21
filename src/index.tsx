@@ -15,6 +15,11 @@ import OrderEdit from './pages/OrderEdit';
 import E404 from './pages/E404';
 import ClientEdit from './pages/ClientEdit';
 import ClientList from './pages/ClientsList';
+/* récupération des erreurs */
+import ErrorBoundary from './components/ErrorBoundary';
+/* pour redux */
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -23,20 +28,24 @@ let titre:string = "Mon CRM";
 let punch:string = 'Ma Punchline';
 root.render(
   <React.StrictMode>
-    <MyHeader titre={titre} punch={punch} />
-    <BrowserRouter>
-      <MyNav />
-      <Routes>
-        <Route path='/' element={ <App /> } />
-        <Route path='/orderadd' element={ <OrderAdd /> } />
-        <Route path='/orderedit/:id' element={ <OrderEdit /> } />
-        <Route path='/clientslist' element={ <ClientList /> } /> 
-        <Route path='/clientedit' element={ <ClientEdit /> } /> 
-        <Route path='/clientedit/:id' element={ <ClientEdit /> } /> 
-        <Route path='*' element = { <E404 /> } />
-      </Routes>
-    </BrowserRouter>
-    <MyFooter nom="Moi" />
+    <Provider store={ store }>
+      <ErrorBoundary>
+        <MyHeader titre={titre} punch={punch} />
+        <BrowserRouter>
+          <MyNav />
+          <Routes>
+            <Route path='/' element={ <App /> } />
+            <Route path='/orderadd' element={ <OrderAdd /> } />
+            <Route path='/orderedit/:id' element={ <OrderEdit /> } />
+            <Route path='/clientslist' element={ <ClientList /> } /> 
+            <Route path='/clientedit' element={ <ClientEdit /> } /> 
+            <Route path='/clientedit/:id' element={ <ClientEdit /> } /> 
+            <Route path='*' element = { <E404 /> } />
+          </Routes>
+        </BrowserRouter>
+        <MyFooter nom="Moi" />
+      </ErrorBoundary>
+    </Provider>
   </React.StrictMode>
 );
 

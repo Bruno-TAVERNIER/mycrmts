@@ -4,6 +4,8 @@ import React from 'react';
 import logo from '../logo.svg';
 //import du scss
 import '../scss/MyHeader.scss';
+import { useSelector } from 'react-redux';
+import { selectCount } from '../redux/counterSlice';
 
 export default class MyHeader extends React.Component<any, any> {
 	// un composant classe peut avoir un constructeur pour recevoir des propriétés
@@ -67,7 +69,6 @@ export default class MyHeader extends React.Component<any, any> {
 					<button onClick={ this.increment }>{ this.state.count }</button>
 					<button onClick={ this.increment2 }>{ this.state.count2 }</button>
 					<button onClick={ this.increment3 }>{ this.state.count3 }</button>
-
 				</div>
 			</header>
 		)
