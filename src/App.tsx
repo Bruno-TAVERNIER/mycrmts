@@ -14,7 +14,7 @@ import Orders from './Interfaces/IOrders';
 import { useNavigate } from 'react-router-dom';
 import MonSlot from './components/Slot';
 /* pour redux */
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectCount } from './redux/counterSlice';
 
 function App() {
@@ -79,6 +79,7 @@ function App() {
   else return (
     <div className="App">
       <ThemeContext.Provider value="dark">
+        <h1>Liste des Orders</h1>
          <MyTable orders={ orders } modifState = { modifState } delete = { deleteOrder } />
          <button className="btn btn-primary" onClick={ ajouter }>Ajouter</button>
       </ThemeContext.Provider >

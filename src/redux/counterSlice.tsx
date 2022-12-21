@@ -3,7 +3,9 @@ import { fetchCount } from './counterApi';
 
 const initialState = {
 	value: 45,
-	status: 'idle'
+	status: 'idle'/*,
+	orders : [{a: 1, b: 2}],
+	... */
 };
 
 /* fonction asynchrone de mise à jour du state */
@@ -29,8 +31,10 @@ export const counterSlice = createSlice({
 		},
 		incrementByAmount : (state, action) => {
 			state.value += action.payload; 
-		}
+		},
+		/* reducers => stockage/récupération d'infos dans localStorage, ... */
 	},
+	/* extrareducers servent pour les appels asynchrones (promises) */
 	extraReducers: (builder) => {
 		builder
 			.addCase(incrementAsync.pending, (state) => {
